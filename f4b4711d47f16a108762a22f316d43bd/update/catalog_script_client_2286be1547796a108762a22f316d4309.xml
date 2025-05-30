@@ -19,41 +19,30 @@
         <order/>
         <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
-	if (isLoading || newValue == '') {
-		return;
-	}
-	g_form.setDisplay('variable_1', false);
-	g_form.setDisplay('variable_2', false);
-	g_form.setDisplay('variable_3', false);
-	g_form.setDisplay('variable_4', false);
-	g_form.setDisplay('variable_5', false);
-	g_form.setDisplay('variable_6', false);
-	g_form.setDisplay('variable_7', false);
-	g_form.setDisplay('variable_8', false);
-	g_form.setDisplay('variable_9', false);
-	g_form.setDisplay('variable_10', false);
-	if (newValue == 1) {
-		g_form.setDisplay('variable_1', true);
-		g_form.setDisplay('variable_2', true);
-	}
-	if (newValue == 2) {
-		g_form.setDisplay('variable_3', true);
-		g_form.setDisplay('variable_4', true);
-	}
-	else if (newValue == 3) {
-		g_form.setDisplay('variable_5', true);
-		g_form.setDisplay('variable_6', true);
-	}
-	else if (newValue == 4) {
-		g_form.setDisplay('variable_7', true);
-	}
-	else if (newValue == 5) {
-		g_form.setDisplay('variable_8', true);
-	}
-	else if (newValue == 6) {
-		g_form.setDisplay('variable_9', true);
-		g_form.setDisplay('variable_10', true);
-	}
+    if (isLoading || newValue == '') {
+        return;
+    }
+
+    if (newValue == '0' || newValue == '1') {
+       //display variables for tab 1
+        g_form.setDisplay('variable1_tab1', true);
+        g_form.setDisplay('variable2_tab1', true);
+
+        //variables that should not dipslay on tab 1
+        g_form.setDisplay('variable1_tab2', false);
+        g_form.setDisplay('variable2_tab2', false);
+    }
+
+    if (newValue == '2') {
+       //display variables for tab 2
+        g_form.setDisplay('variable1_tab2', true);
+        g_form.setDisplay('variable2_tab2', true);
+
+       //variables that should not display on tab 2
+        g_form.setDisplay('variable1_tab1', false);
+        g_form.setDisplay('variable2_tab1', false);
+    }
+
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -61,7 +50,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2286be1547796a108762a22f316d4309</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Section Change</sys_name>
         <sys_overrides/>
         <sys_package display_value="Catalog Item Section" source="x_1755675_catalog">f4b4711d47f16a108762a22f316d43bd</sys_package>
@@ -69,7 +58,7 @@
         <sys_scope display_value="Catalog Item Section">f4b4711d47f16a108762a22f316d43bd</sys_scope>
         <sys_update_name>catalog_script_client_2286be1547796a108762a22f316d4309</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-28 07:21:42</sys_updated_on>
+        <sys_updated_on>2025-05-29 08:33:43</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

@@ -1,37 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($scope) {
-	var c = this;
-	
-	c.setSection1Visible = function() {
-		var g_form = $scope.page.g_form;
-		g_form.setValue('current_section','1');
-	},
-		c.setSection2Visible = function() {
-		var g_form = $scope.page.g_form;
-		g_form.setValue('current_section','2');
-	},
-		c.setSection3Visible = function() {
-		var g_form = $scope.page.g_form;
-		g_form.setValue('current_section','3');
-	},
-		c.setSection4Visible = function() {
-		var g_form = $scope.page.g_form;
-		g_form.setValue('current_section','4');
-	},
-		c.setSection5Visible = function() {
-		var g_form = $scope.page.g_form;
-		g_form.setValue('current_section','5');
-	},
-		c.setSection6Visible = function() {
-		var g_form = $scope.page.g_form;
-		g_form.setValue('current_section','6');
+        <client_script><![CDATA[api.controller = function($scope) {
+    /* widget controller */
+    var c = this;
+
+	//g_form is avaiable via the page from $scope. Making it shorter here.
+    var gform = $scope.page.g_form;
+
+    $scope.setTabIndex = function(index, $event) {
+        var oldValue = gform.getValue('current_section');
+        if (index == '2') {
+            mandatoryCheck('variable2_tab1', oldValue, index, $event);
+            return;
+        }
+
+        gform.setValue('current_section', index);
+        $event.target.classList.remove('btn-default');
+        $event.target.classList.add('btn-primary');
+				setActiveButton();
+    }
+
+    function setActiveButton(){
+		var activeTab = gform.getValue('current_section');
+		$('[data-tab-index="' + activeTab + '"]').removeClass('btn-default').addClass('btn-primary');
+
+		$('[data-tab-index]').filter(function(){
+			return $(this).attr('data-tab-index') != activeTab;
+		}).removeClass('btn-primary').addClass('btn-default');
+
 	}
 
-};
+    function mandatoryCheck(variableName, oldValue, newValue, $event) {
+        if (gform.isMandatory(variableName) && gform.getValue(variableName) == "") {
+            gform.showErrorBox(variableName, "Populate Mandatory field before moving on");
+            gform.setValue('current_section', oldValue)
+            return;
+        }
 
-]]></client_script>
+        gform.setValue('current_section', newValue);
+        $event.target.classList.remove('btn-default');
+        $event.target.classList.add('btn-primary');
+				setActiveButton();
+    }
+
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>.btn-breadcrumb .btn:not(:last-child):after {
   content: " ";
@@ -107,23 +120,20 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-28 02:34:08</sys_created_on>
         <sys_id>6c77359147356a108762a22f316d435d</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>Catalog Item Section</sys_name>
         <sys_package display_value="Catalog Item Section" source="x_1755675_catalog">f4b4711d47f16a108762a22f316d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="Catalog Item Section">f4b4711d47f16a108762a22f316d43bd</sys_scope>
         <sys_update_name>sp_widget_6c77359147356a108762a22f316d435d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-28 03:00:48</sys_updated_on>
+        <sys_updated_on>2025-05-29 08:45:28</sys_updated_on>
         <template><![CDATA[<div>
   <div class="btn-group btn-breadcrumb" >
-    <a ng-click="c.setSection1Visible()" class="btn btn-default"><i class="glyphicon glyphicon-home"></i></a>
-    <a ng-click="c.setSection1Visible()" class="btn btn-default">Section 1</a>
-    <a ng-click="c.setSection2Visible()" class="btn btn-default">Section 2</a>
-    <a ng-click="c.setSection3Visible()" class="btn btn-default">Section 3</a>
-    <a ng-click="c.setSection4Visible()" class="btn btn-default">Section 4</a>
-    <a ng-click="c.setSection5Visible()" class="btn btn-default">Section 5</a>
-    <a ng-click="c.setSection6Visible()" class="btn btn-default">Section 6</a>
+    <a ng-click="setTabIndex('1',$event)" class="btn btn-primary" data-tab-index="0"><i class="glyphicon glyphicon-home"></i></a>
+    <a ng-click="setTabIndex('1',$event)" class="btn btn-primary" data-tab-index="1">Section 1</a>
+    <a ng-click="setTabIndex('2', $event)" class="btn btn-default" data-tab-index="2">Section 2</a>
+
   </div>
 </div>]]></template>
     </sp_widget>

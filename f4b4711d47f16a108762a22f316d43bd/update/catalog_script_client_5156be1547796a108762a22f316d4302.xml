@@ -21,11 +21,11 @@
         <script><![CDATA[function onLoad() {
 	g_form.setDisplay('current_section', false);
 	//Section 1
-	g_form.setDisplay('variable_1', true);
-	g_form.setDisplay('variable_2', true);
+	g_form.setDisplay('variable1_tab1', true);
+	g_form.setDisplay('variable2_tab1', true);
 	//Section 2
-	g_form.setDisplay('variable_3', false);
-	g_form.setDisplay('variable_4', false);
+	g_form.setDisplay('variable1_tab2', false);
+	g_form.setDisplay('variable2_tab2', false);
 	//Section 3
 	g_form.setDisplay('variable_5', false);
 	g_form.setDisplay('variable_6', false);
@@ -43,7 +43,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5156be1547796a108762a22f316d4302</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Initial Section</sys_name>
         <sys_overrides/>
         <sys_package display_value="Catalog Item Section" source="x_1755675_catalog">f4b4711d47f16a108762a22f316d43bd</sys_package>
@@ -51,7 +51,7 @@
         <sys_scope display_value="Catalog Item Section">f4b4711d47f16a108762a22f316d43bd</sys_scope>
         <sys_update_name>catalog_script_client_5156be1547796a108762a22f316d4302</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-28 07:19:23</sys_updated_on>
+        <sys_updated_on>2025-05-29 08:33:04</sys_updated_on>
         <table/>
         <type>onLoad</type>
         <ui_type>10</ui_type>
