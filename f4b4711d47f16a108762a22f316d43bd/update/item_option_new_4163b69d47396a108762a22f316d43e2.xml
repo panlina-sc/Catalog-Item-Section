@@ -31,11 +31,11 @@
         <instructions/>
         <layout>normal</layout>
         <list_table/>
-        <lookup_label/>
+        <lookup_label>name</lookup_label>
         <lookup_price/>
-        <lookup_table/>
+        <lookup_table>core_country</lookup_table>
         <lookup_unique>false</lookup_unique>
-        <lookup_value/>
+        <lookup_value>name</lookup_value>
         <macro/>
         <macroponent/>
         <mandatory>false</mandatory>
@@ -49,7 +49,7 @@
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Variable 1</question_text>
+        <question_text>Country</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -58,8 +58,8 @@
         <record/>
         <record_producer_table/>
         <reference/>
-        <reference_qual/>
-        <reference_qual_condition/>
+        <reference_qual>population&gt;100000</reference_qual>
+        <reference_qual_condition>population&gt;100000</reference_qual_condition>
         <rich_text/>
         <roles_to_use_also_request_for/>
         <save_script><![CDATA[/** This script is executed before the Record is generated
@@ -79,18 +79,18 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-28 06:56:28</sys_created_on>
         <sys_id>4163b69d47396a108762a22f316d43e2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Variable 1</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Country</sys_name>
         <sys_package display_value="Catalog Item Section" source="x_1755675_catalog">f4b4711d47f16a108762a22f316d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="Catalog Item Section">f4b4711d47f16a108762a22f316d43bd</sys_scope>
         <sys_update_name>item_option_new_4163b69d47396a108762a22f316d43e2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-28 06:56:28</sys_updated_on>
+        <sys_updated_on>2025-05-30 00:20:48</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
-        <type>6</type>
+        <type>18</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>

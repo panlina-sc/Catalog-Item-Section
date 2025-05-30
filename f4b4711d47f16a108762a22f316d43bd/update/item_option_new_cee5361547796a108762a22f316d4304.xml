@@ -49,7 +49,7 @@
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Variable 9</question_text>
+        <question_text>Requested for</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -57,7 +57,7 @@
         <rec_price_if_checked>0</rec_price_if_checked>
         <record/>
         <record_producer_table/>
-        <reference/>
+        <reference>sys_user</reference>
         <reference_qual/>
         <reference_qual_condition/>
         <rich_text/>
@@ -79,18 +79,18 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-05-28 07:07:32</sys_created_on>
         <sys_id>cee5361547796a108762a22f316d4304</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Variable 9</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Requested for</sys_name>
         <sys_package display_value="Catalog Item Section" source="x_1755675_catalog">f4b4711d47f16a108762a22f316d43bd</sys_package>
         <sys_policy/>
         <sys_scope display_value="Catalog Item Section">f4b4711d47f16a108762a22f316d43bd</sys_scope>
         <sys_update_name>item_option_new_cee5361547796a108762a22f316d4304</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-05-28 07:07:32</sys_updated_on>
+        <sys_updated_on>2025-05-30 00:20:33</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
-        <type>6</type>
+        <type>31</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
